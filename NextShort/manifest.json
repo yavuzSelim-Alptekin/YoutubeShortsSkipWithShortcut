@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Shorts Controller",
+  "version": "1.0",
+  "description": "Klavye medya tuşlarıyla YouTube Shorts videolarını değiştir.",
+  "permissions": ["commands", "tabs", "scripting"],
+  "host_permissions": ["*://www.youtube.com/shorts/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/shorts/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+  "next-short": {
+    "description": "Bir sonraki Shorts videosuna geç"
+  },
+  "prev-short": {
+    "description": "Önceki Shorts videosuna dön"
+  },
+  "toggle-play": {
+    "description": "Oynat / Durdur"
+  }
+  }
+}
+
